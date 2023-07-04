@@ -49,13 +49,53 @@
       // );
 
 
-	    Surffy_Action({'https://kydculx.github.io/waitingroom'}, function() {
-	// to do
-});
+
     </script>
     
   </head>
   <body>
+
+<script>
+    const handleSubmitForm = (e) => {
+      e.preventDefault();
+      console.log("submit");
+
+    // 유효성 검사 등의 로직
+    if (document.test.userid.value == "") {
+      ...
+      return false;
+    }
+    
+    // 메서드 사용
+    Surffy_Action(document.test.action, () => {
+      document.test.submit();
+    });
+  };
+</script>
+
+<form name="test" action="/test" onsubmit="return handleSubmitForm(event)">
+  <input type="text" name="userid" />
+  <input type="submit" value="로그인" />
+</form>
+
+	  <script>
+  const handleClickButton = () => {
+    // 메서드 실행 전 로직
+		if (!validation()) {
+      return false;
+    }
+
+		// 메서드 사용
+    Surffy_Action('https://surffy.io/button', function() {
+      console.log('callback');
+    });
+  }
+</script>
+
+<div onclick="handleClickButton">
+  <span>이곳을 클릭해 주세요.</span>
+</div>
+	  
   </body>
 </html>
 	  
