@@ -44,17 +44,13 @@
 
 <body>
 
-<script>
+<script type="text/javascript">
 	function webToApp() {
-		try { window.webToAppChange.postMessage('ok'); } catch (err) { }
+		try { JavaScriptChannel.postMessage("ok"); } catch (err) { }
 	
 	}
-	
-	window.addEventListener('load', 
-			webToApp()
-			);
 </script>
 
-	<button id="btn_webToApp" onclick="webToApp()">webToApp</button>
+	<button type="button" onclick="webToApp()">webToApp</button>
 </body>
 </html>
