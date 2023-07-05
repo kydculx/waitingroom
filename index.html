@@ -41,18 +41,18 @@
         <title>test</title>
 
 <script>
-	function webToApp(msg) {
-		try { window.javaChannel.postMessage(msg); } catch (err) { }
+	function webToApp() {
+		try { window.javaChannel.postMessage('ok'); } catch (err) { }
 	
 	}
 	
 	window.addEventListener('load', 
-			webToApp("aaaaaa")
+			webToApp()
 			);
 </script>
 </head>
 
 <body>
-	<button id="btn_webToApp" onclick="webToApp('웹페이지에서 앱 전달')">webToApp</button>
+	<button id="btn_webToApp" onclick="webToApp()">webToApp</button>
 </body>
 </html>
