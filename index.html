@@ -58,8 +58,6 @@ try { colorChanged.postMessage(colors[randonNumber]); } catch (err) { }
 
 function webToApp(msg) {
 
-alert(msg);
-
 try { webToAppChange.postMessage(msg); } catch (err) { }
 
 }
@@ -67,8 +65,6 @@ try { webToAppChange.postMessage(msg); } catch (err) { }
 
 
 function appToWeb(color) {
-
-alert("aa");
 
 var myDiv = document.getElementById("container_box");
 
