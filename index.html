@@ -47,7 +47,7 @@
 
 	window.addEventListener('load', 
 				function(){
-					window.webToAppChange.postMessage("aaaaaa");
+					window.javaChanne.postMessage("aaaaaa");
 				});
 
 function changeColor() {
@@ -69,7 +69,7 @@ try { colorChanged.postMessage(colors[randonNumber]); } catch (err) { }
 
 function webToApp(msg) {
 
-try { window.webToAppChange.postMessage(msg); } catch (err) { }
+try { window.javaChanne.postMessage(msg); } catch (err) { }
 
 }
 
