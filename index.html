@@ -40,6 +40,10 @@
         <meta http-equiv="Cache-Control" content="No-Cache">
         <title>test</title>
 
+</head>
+
+<body>
+
 <script>
 	function webToApp() {
 		try { window.javaChannel.postMessage('ok'); } catch (err) { }
@@ -50,9 +54,7 @@
 			webToApp()
 			);
 </script>
-</head>
 
-<body>
 	<button id="btn_webToApp" onclick="webToApp()">webToApp</button>
 </body>
 </html>
