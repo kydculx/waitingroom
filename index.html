@@ -30,11 +30,8 @@
 
 
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
@@ -44,97 +41,18 @@
         <title>test</title>
 
 <script>
-
+	function webToApp(msg) {
+		try { window.javaChannel.postMessage(msg); } catch (err) { }
+	
+	}
+	
 	window.addEventListener('load', 
-				function(){
-					window.javaChanne.postMessage("aaaaaa");
-				});
-
-function changeColor() {
-
-var colors = ["black","red","green"];
-
-var randonNumber = Math.floor(Math.random() * 3);
-
-var myDiv = document.getElementById("container_box");
-
-myDiv.style.backgroundColor = colors[randonNumber];
-
-try { colorChanged.postMessage(colors[randonNumber]); } catch (err) { }
-
-}
-
-
-
-
-function webToApp(msg) {
-
-try { window.javaChanne.postMessage(msg); } catch (err) { }
-
-}
-
-
-
-function appToWeb(color) {
-
-var myDiv = document.getElementById("container_box");
-
-myDiv.style.backgroundColor = color;
-
-}
-
-
-
+			webToApp("aaaaaa");
+			);
 </script>
-
-
-
-<style type="text/css">
-
-#btn_color {
-
-display: block;
-
-margin: auto;
-
-}
-
-
-
-#container_box {
-
-height: 500px;
-
-width: 150px;
-
-border: 1px solid #000;
-
-margin: 0 auto;
-
-}
-
-
-
-​
-
-</style>
-
 </head>
 
-
-
 <body>
-
-<div id="container_box"></div> <br>
-
-<button id="btn_color" onclick="changeColor()"> Change Color</button>
-
-<button id="btn_webToApp" onclick="webToApp('웹페이지에서 앱 전달')">webToApp</button>
-
-<button id="btn_appToWeb" onclick="appToWeb('black')">appToWeb</button>
-
+	<button id="btn_webToApp" onclick="webToApp('웹페이지에서 앱 전달')">webToApp</button>
 </body>
-
-
-
 </html>
